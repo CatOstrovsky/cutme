@@ -11,8 +11,29 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require bootstrap/dist/css/bootstrap.min.css
+ *= require_self
  *= require noty/lib/noty.css
  *= require noty/lib/themes/nest.css
+ *= require simple-line-icons/scss/simple-line-icons.scss
  */
+@import "design";
+@import "//use.fontawesome.com/releases/v5.7.1/css/all.css";
+
+a {
+  &:visited {
+    color: inherit;
+  }
+}
+
+.showcase{
+  .showcase-img {
+    filter: grayscale(1);
+    transition: filter .7s ease;
+  }
+  .no-gutters:hover {
+    .showcase-img {
+      filter: grayscale(0)!important;
+    }
+  }
+}

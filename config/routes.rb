@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
    match '/@:short', to: 'cutme#index', via: :all
 
-   root :to => 'links#index'
+   root :to => 'homepage#index'
 end
