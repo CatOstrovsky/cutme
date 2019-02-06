@@ -18,12 +18,10 @@ isUrl = (url) ->
   new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/).test url
 
 makeError = (text) ->
-  $noty = new Noty {text: text, type: 'alert', timeout: 2000, theme: 'nest'}
-  $noty.show()
+  new Noty({text: text, type: 'alert', timeout: 2000, theme: 'nest'}).show()
 
 makeSuccess = (text) ->
-  $noty = new Noty {text: text, type: 'success', theme: 'nest'}
-  $noty.show()
+  new Noty({text: text, type: 'success', theme: 'nest'}).show()
 
 onRequestCreate = (res) ->
-  makeSuccess("Success created link "+window.origin+"/@"+res.short)
+  makeSuccess "Success created link "+window.origin+"/@"+res.short
