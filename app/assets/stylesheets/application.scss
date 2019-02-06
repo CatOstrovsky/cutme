@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/dist/css/bootstrap.min.css
+ *= require noty/lib/noty.css
+ *= require noty/lib/themes/nest.css
  */
