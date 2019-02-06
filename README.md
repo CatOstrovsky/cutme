@@ -11,3 +11,5 @@ Whatever steps are necessary to get the application up and running.
 * Database initialization rails db:migrate
 
 * How to run the test suite rails server
+
+* NPM (yarn)
