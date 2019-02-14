@@ -1,0 +1,29 @@
+<form id="generate-form">
+
+  <div class="form-row">
+    <div class="col-12 col-md-9 mb-2 mb-md-0">
+      <input type="text" name="url" class="form-control form-control-lg" required placeholder="Enter url link...">
+    </div>
+    <div class="col-12 col-md-3">
+      <button type="submit" class="btn btn-block btn-lg btn-primary">Get short!</button>
+    </div>
+  </div>
+
+  <div class="alert alert-success mt-3" role="alert" id="generated-data-wrapper">
+    <h4 class="mb-3">Short link generated!</h4>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control link" value="http://cutme.ru/@dfasfasfas" readonly id="link">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" id="copy-link" data-clipboard-target="#link"><i class="far fa-copy"></i> Copy to clipboard</button>
+      </div>
+    </div>
+
+    <p>
+      <a href="#" class="btn btn-primary analytics"><i class="far fa-chart-bar"></i> Analytics</a>
+      <a href="http://cutme.ru/@dfasfasfas" class="btn btn-primary opennewtab" target="_blank"><i class="fas fa-link"></i> Open in new tab</a>
+      <a href="#" class="btn btn-primary linksettings" target="_blank"><i class="fas fa-cog"></i> Link settings</a>
+    </p>
+  </div>
+
+</form>

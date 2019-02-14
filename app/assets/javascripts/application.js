@@ -18,3 +18,4 @@
 //= require bootstrap/dist/js/bootstrap.min.js
 //= require noty/lib/noty.min.js
 //= require lodash/lodash.js
+//= require clipboard/dist/clipboard.min.js

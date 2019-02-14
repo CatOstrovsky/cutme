@@ -7,7 +7,13 @@ $(document).ready ->
     $data = $(this).find("input").first().val()
     createUrl($data)
 
+  clipboard = new ClipboardJS('.btn');
+  clipboard.on 'success', (e) ->
+      makeSuccess("Link was copied!")
+
+
 createUrl = (url) ->
+  $("#generated-data-wrapper").animate {opacity: 0}, 250
   if isUrl(url)
     $.post('/links.json', { link : { original : url } } )
       .then onRequestCreate
@@ -21,7 +27,11 @@ makeError = (text) ->
   new Noty({text: text, type: 'alert', timeout: 2000, theme: 'nest'}).show()
 
 makeSuccess = (text) ->
-  new Noty({text: text, type: 'success', theme: 'nest'}).show()
+  new Noty({text: text, type: 'success', timeout: 2000, theme: 'nest'}).show()
 
 onRequestCreate = (res) ->
-  makeSuccess "Success created link "+window.origin+"/@"+res.short
+  link = window.origin+"/@"+res.short
+  makeSuccess "Success created link "+link
+  $("#generated-data-wrapper").animate {opacity: 1}, 250
+  $("#link").val(link)
+  $("#generated-data-wrapper .opennewtab").attr("href", link)
