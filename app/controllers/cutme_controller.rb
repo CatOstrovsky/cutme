@@ -5,9 +5,7 @@ class CutmeController < ApplicationController
 
   def index
     @short = params[:short]
-    @full =  @@lib.getFull @short
-
-    redirect_to @full
+    @full =  @@lib.getFull @short, request
   end
 
 end

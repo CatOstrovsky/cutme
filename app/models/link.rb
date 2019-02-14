@@ -1,7 +1,8 @@
 class Link < ApplicationRecord
+  has_many :clicks, dependent: :destroy
 
-  def incrementView
-    update click_count: click_count + 1
+  def incrementView(referer)
+    self.clicks.create(refer: referer)
   end
 
   before_create do

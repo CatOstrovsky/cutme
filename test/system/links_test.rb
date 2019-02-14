@@ -15,7 +15,6 @@ class LinksTest < ApplicationSystemTestCase
     click_on "New Link"
 
     fill_in "Active", with: @link.active
-    fill_in "Click count", with: @link.click_count
     fill_in "Description", with: @link.description
     fill_in "Name", with: @link.name
     fill_in "Original", with: @link.original
@@ -31,7 +30,6 @@ class LinksTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Active", with: @link.active
-    fill_in "Click count", with: @link.click_count
     fill_in "Description", with: @link.description
     fill_in "Name", with: @link.name
     fill_in "Original", with: @link.original

@@ -10,19 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_131525) do
+ActiveRecord::Schema.define(version: 2019_02_14_094326) do
+
+  create_table "clicks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "refer"
+    t.integer "link_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["refer", "link_id"], name: "index_clicks_on_refer_and_link_id"
+  end
 
   create_table "links", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "original", null: false
     t.string "short", null: false
-    t.integer "click_count", default: 0
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["active"], name: "index_links_on_active"
-    t.index ["click_count"], name: "index_links_on_click_count"
     t.index ["original"], name: "index_links_on_original"
     t.index ["short", "active", "original"], name: "index_links_on_short_and_active_and_original"
     t.index ["short", "active"], name: "index_links_on_short_and_active"
