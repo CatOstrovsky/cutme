@@ -19,3 +19,5 @@
 //= require noty/lib/noty.min.js
 //= require lodash/lodash.js
 //= require clipboard/dist/clipboard.min.js
+//= require chart.js/dist/Chart.min.js
+//= require moment/min/moment-with-locales.min.js

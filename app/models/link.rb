@@ -1,8 +1,8 @@
 class Link < ApplicationRecord
   has_many :clicks, dependent: :destroy
 
-  def incrementView(referer)
-    self.clicks.create(refer: referer)
+  def incrementView(referer, ismobile)
+    self.clicks.create(refer: referer, device_type: ismobile ? "mobile" : "pc")
   end
 
   before_create do

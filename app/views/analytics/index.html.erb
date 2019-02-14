@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center mt-3 mb-2">Statistic of url <a href="<%= @link.original %>" target="_blank"><%= @link.original %></a></h1>
+  <p class="text-center mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+  <h4 class="text-center mt-4">Count views statistic</h4>
+  <canvas id="statistic_view" class="mb-5"></canvas>
+
+  <div class="row mb-5">
+    <div class="col-6">
+      <h4 class="mb-3 text-center">References from websites</h4>
+      <canvas id="statistic_ref"></canvas>
+    </div>
+    <div class="col-6">
+      <h4 class="mb-3 text-center">Devices types</h4>
+      <canvas id="statistic_devices"></canvas>
+    </div>
+  </div>
+
+  <a href="/" class="go-home"><i class="fas fa-arrow-left"></i></a>
+</div>
+
+<script>
+  window.dataSet = JSON.parse($('<textarea />').html("<%= @link.clicks.to_json %>").text());
+</script>

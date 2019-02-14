@@ -1,10 +1,11 @@
 class CutmeLib
   @@defaultRedirect = "/"
 
-  def getFull(short, request)
-   @shortLinkObject = Link.find_by(short: short, active: true)
+
+  def getFull(short, request, ismobile)
+   @shortLinkObject = getLink short
    if @shortLinkObject
-     @shortLinkObject.incrementView request.referer
+     @shortLinkObject.incrementView request.referer, ismobile
      @shortLinkObject.original
    else
      @@defaultRedirect
@@ -12,4 +13,7 @@ class CutmeLib
   end
 
 
+  def getLink(link_name)
+    Link.find_by(short: link_name, active: true)
+  end
 end

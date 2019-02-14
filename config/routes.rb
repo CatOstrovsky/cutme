@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
    match '/@:short', to: 'cutme#index', via: :all
 
+   get '/analytics/:link_id', to: 'analytics#index'
+
    root :to => 'homepage#index'
 end

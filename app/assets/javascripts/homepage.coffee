@@ -35,3 +35,4 @@ onRequestCreate = (res) ->
   $("#generated-data-wrapper").animate {opacity: 1}, 250
   $("#link").val(link)
   $("#generated-data-wrapper .opennewtab").attr("href", link)
+  $("#generated-data-wrapper .analytics").attr("href", "/analytics/"+res.short)
